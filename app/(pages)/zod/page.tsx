@@ -8,7 +8,7 @@ const userSchema = z.object({
 
 type TUser = z.infer<typeof userSchema>;
 
-const fetchUserData = async (): Promise<unknown> => {
+const fetchUserData = (): Promise<TUser> => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve({
@@ -21,7 +21,7 @@ const fetchUserData = async (): Promise<unknown> => {
 };
 
 export default async function Page() {
-  const data: unknown = await fetchUserData();
+  const data = await fetchUserData();
   const validatedUser = userSchema.safeParse(data);
 
   const renderUser = () => {

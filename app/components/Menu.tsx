@@ -31,7 +31,7 @@ const Menu = () => {
       />
       <Button
         url="https://mockapi.io/projects/66547cc61c6af63f467827d2"
-        text="CMS"
+        text="CMS-T"
         blank={true}
         isMobile={isMobile}
         icon={<GoDatabase size={20} />}
